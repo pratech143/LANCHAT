@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>LAN WebSocket Chat</title>
+</head>
+<body>
+  <h1>LAN Chat (WebSocket)</h1>
+  <div id="chat" style="height: 200px; overflow-y: auto; border: 1px solid #ccc;"></div>
+  <input type="text" id="msgInput" placeholder="Type message..." />
+  <button onclick="sendMsg()">Send</button>
+
+  <script>
+    const ws = new WebSocket(`ws://localhost:8080`);
+    const chat = document.getElementById('chat');
+    const input = document.getElementById('msgInput');
+
+    ws.onmessage = e => {
+      const p = document.createElement('p');
+      p.textContent = e.data;
+      chat.appendChild(p);
+      chat.scrollTop = chat.scrollHeight;
+    };
+
+    function sendMsg() {
+      if (input.value.trim()) {
+        ws.send(input.value.trim());
+        input.value = '';
+      }
+    }
+
+    input.addEventListener('keydown', e => {
+      if (e.key === 'Enter') sendMsg();
+    });
+  </script>
+</body>
+</html>
