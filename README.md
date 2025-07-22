@@ -15,13 +15,7 @@ This is a console-based LAN chat application implemented in C using Winsock2 for
 
 ---
 
-## Folder Structure
-LanChat/
 
-├── client.c # Client source code
-├── server.c # Server source code
-├── ClientFiles/ # Created by client automatically; stores received files in subfolders by username
-└── README.md # Project documentation
 
 ## Compilation Instructions
 
@@ -34,15 +28,19 @@ Open your terminal (e.g., MSYS2 or MinGW) and run the following commands:
 Compile server
 gcc server.c -o server.exe -lws2_32
 
+```bash
 Compile Client
 gcc client.c -o client.exe -lws2_32
 
+```bash
 Start the Server 
 ./server
 
+```bash
 Start the client 
 ./client
 
+```bash
 Send the file in the chat 
 sendfile path\to\your\file
 
