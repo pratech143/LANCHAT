@@ -26,24 +26,21 @@ LanChat/
 
 Open your terminal (e.g., MSYS2 or MinGW) and run the following commands:
 
-### Compile Server
+### Commands for running the chat
 
 ```bash
 gcc server.c -o server.exe -lws2_32
 
-### Compile Client
-
-```bash
+Compile Client
 gcc client.c -o client.exe -lws2_32
 
-### Start the Server 
+Start the Server 
 ./server
 
-###Start the client 
+Start the client 
 ./client
 
-### Send the file in the chat 
-
+Send the file in the chat 
 sendfile path\to\your\file
 
-## It will be saved as ClientFiles\<YourUsername>\
+ It will be saved as ClientFiles\<YourUsername>\
