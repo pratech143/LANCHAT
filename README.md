@@ -21,27 +21,36 @@ This is a console-based LAN chat application implemented in C using Winsock2 for
 
 Open your terminal (e.g., MSYS2 or MinGW) and run the following commands:
 
-### Commands for running the chat
-
+### Compile server
 ```bash
-
-Compile server
 gcc server.c -o server.exe -lws2_32
+```
 
+### Compile client
 ```bash
-Compile Client
 gcc client.c -o client.exe -lws2_32
+```
 
-```bash
-Start the Server 
-./server
+---
 
-```bash
-Start the client 
-./client
+## Running Instructions
 
+### Start the server
 ```bash
-Send the file in the chat 
+./server.exe
+```
+
+### Start the client
+```bash
+./client.exe
+```
+
+### Sending files in the chat
+In the client terminal, type:
+```bash
 sendfile path\to\your\file
-
- It will be saved as ClientFiles\<YourUsername>\
+```
+The file will be saved automatically as:
+```
+ClientFiles\<YourUsername>\
+```
